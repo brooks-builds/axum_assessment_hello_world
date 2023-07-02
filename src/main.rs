@@ -1,18 +1,17 @@
 use std::net::SocketAddr;
 
 use axum::{routing::get, Router};
+use eyre::Result;
+use hello_world::config::Config;
 
 #[tokio::main]
-async fn main() {
-    let app = Router::new().route("/", get(hello_world));
+async fn main() -> Result<()> {
+    let config = Config::new();
 
-    let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
-    axum::Server::bind(&addr)
-        .serve(app.into_make_service())
-        .await
-        .unwrap();
-}
+    match hello_world::run(config).await {
+        Ok(_) => println!("Server shut down"),
+        Err(error) => eprintln!("Something went wrong: {}", error.to_string()),
+    }
 
-async fn hello_world() -> &'static str {
-    "hello world"
+    Ok(())
 }
