@@ -1,6 +1,3 @@
-use std::net::SocketAddr;
-
-use axum::{routing::get, Router};
 use eyre::Result;
 use hello_world::config::Config;
 
@@ -10,7 +7,7 @@ async fn main() -> Result<()> {
 
     match hello_world::run(config).await {
         Ok(_) => println!("Server shut down"),
-        Err(error) => eprintln!("Something went wrong: {}", error.to_string()),
+        Err(error) => eprintln!("Something went wrong: {}", error),
     }
 
     Ok(())

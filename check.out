@@ -1,23 +1,8 @@
-warning: unused import: `std::net::SocketAddr`
- --> src/main.rs:1:5
-  |
-1 | use std::net::SocketAddr;
-  |     ^^^^^^^^^^^^^^^^^^^^
-  |
-  = note: `#[warn(unused_imports)]` on by default
-
-warning: unused imports: `Router`, `routing::get`
- --> src/main.rs:3:12
-  |
-3 | use axum::{routing::get, Router};
-  |            ^^^^^^^^^^^^  ^^^^^^
-
-warning: `hello_world` (bin "hello_world" test) generated 2 warnings (run `cargo fix --bin "hello_world" --tests` to apply 2 suggestions)
-warning: `hello_world` (bin "hello_world") generated 2 warnings (2 duplicates)
-    Finished test [unoptimized + debuginfo] target(s) in 0.17s
-     Running unittests src/lib.rs (target/debug/deps/hello_world-fe6894a28c6bb524)
-     Running unittests src/main.rs (target/debug/deps/hello_world-ba72346f79cc78cb)
-     Running tests/hello_world.rs (target/debug/deps/hello_world-e5366684a1e3b03d)
+   Compiling hello_world v0.1.0 (/Users/brookzerker/code/brooks_builds/axum_assessments/axum_assessment_hello_world)
+    Finished test [unoptimized + debuginfo] target(s) in 0.33s
+     Running unittests src/lib.rs (target/debug/deps/hello_world-ad41b47040386bb2)
+     Running unittests src/main.rs (target/debug/deps/hello_world-7cf612499d1d7ac2)
+     Running tests/hello_world.rs (target/debug/deps/hello_world-46974ccc798dfbb6)
    Doc-tests hello_world
  filtered out; finished in 0.00s
 
